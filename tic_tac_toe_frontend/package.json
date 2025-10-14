@@ -4,9 +4,9 @@
   "private": true,
   "description": "Next.js UI for a Tic-Tac-Toe game with Ocean Professional dark theme.",
   "scripts": {
-    "dev": "cross-env PORT=${PORT:-3000} next dev -H 0.0.0.0 -p $PORT",
+    "dev": "next dev -p ${PORT:-3000} -H 0.0.0.0",
     "build": "next build",
-    "start": "cross-env PORT=${PORT:-3000} next start -H 0.0.0.0 -p $PORT",
+    "start": "next start -p ${PORT:-3000} -H 0.0.0.0",
     "lint": "next lint"
   },
   "dependencies": {
@@ -23,8 +23,7 @@
     "eslint-config-next": "14.2.5",
     "postcss": "8.4.38",
     "tailwindcss": "3.4.9",
-    "typescript": "5.4.5",
-    "cross-env": "7.0.3"
+    "typescript": "5.4.5"
   },
   "engines": {
     "node": ">=18.17.0"
