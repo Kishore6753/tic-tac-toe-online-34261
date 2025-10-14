@@ -1,0 +1,57 @@
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base dark theme variables for Ocean Professional */
+:root {
+  --color-primary: #2563EB;
+  --color-secondary: #F59E0B;
+  --color-error: #EF4444;
+  --color-bg: #0b1220;
+  --color-surface: #0f172a;
+  --color-text: #e5e7eb;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  @apply bg-[color:var(--color-bg)] text-[color:var(--color-text)];
+}
+
+/* Smooth transitions for theme/interactive elements */
+* {
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-medium shadow-soft;
+}
+
+.btn-primary {
+  @apply bg-[color:var(--color-primary)] hover:brightness-110 text-white;
+}
+
+.btn-secondary {
+  @apply bg-[color:var(--color-secondary)] hover:brightness-110 text-black;
+}
+
+/* Board styles */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.cell {
+  @apply flex items-center justify-center rounded-xl bg-[color:var(--color-surface)] hover:bg-slate-800 text-3xl font-bold h-20 w-20 md:h-24 md:w-24 border border-slate-700;
+  user-select: none;
+  cursor: pointer;
+}
+
+.card {
+  @apply bg-[color:var(--color-surface)] rounded-xl border border-slate-700 shadow-soft;
+}
